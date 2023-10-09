@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+  
+html {
+    font-family: "Brush Script MT", cursive;
+}
+  
+body {
+    margin: 0;
+    background:
+    top / contain no-repeat url(/img/Lily_Bronco.jpg);
+    background-size: 100%;
+}
+
+#top {
+    background: left / contain no-repeat url(/img/denver-broncos-logo.png),
+    right / contain no-repeat url(/img/logo-ESPN.png),
+    #002244;
+    border: .5vw solid #FB4F14;
+}
+
+#top p {
+    text-align: center;
+    color: white;
+    font-size: 7.5vw;
+    margin: 0;
+    padding: 2.25vw;
+}
+
+#bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#bottom,
+#bottom p,
+#bottom img,
+#score,
+#score p,
+#time,
+#time p,
+#down,
+#down p {
+    float: left;
+}
+
+#cowboys {
+    float: left;
+    background: #002244;
+    padding: 1vw;
+    border: .25vw solid black;
+}
+
+#broncos {
+    float: left;
+    background-color: #FB4F14;
+    text-align: center;
+    padding: 1vw;
+    border: .25vw solid black;
+}
+
+.teams {
+    text-align: center;
+    color: white;
+    font-size: 2.5vw;
+    margin: 0;
+    padding: 0.1vw;
+}
+
+#score {
+    text-align: center;
+    color: white;
+    font-size: 4vw;
+    margin: 0;
+}
+
+#time,
+#down {
+    text-align: right;
+    color: white;
+    font-size: 4vw;
+    margin: 0;
+    padding: 1vw;
+    background-color: darkgray;
+    border: .25vw solid black;
+}
