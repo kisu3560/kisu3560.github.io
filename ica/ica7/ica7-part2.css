@@ -1,0 +1,83 @@
+body{
+    background-color: olive;
+}
+
+
+#flex-parent{
+    background-color: orangered;
+}
+#flex-parent p{
+    padding:5vw;
+}
+
+#flex-child1{
+    position: relative;
+    left: 50%;
+    top: 130px;
+}
+
+#flex-child2{
+    position: relative;
+    left: 75%;
+}
+#flex-child3{
+    position: relative;
+    left: 25%;
+    bottom: 130px;
+}
+#flex-child4{
+    position: relative;
+    left: 0%;
+    bottom: 260px;
+}
+
+
+#grid-parent{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#grid-parent h1{
+    background-color: grey;
+    padding:3vw 5vh;
+    margin:5vw;
+    align-items: center;
+}
+
+#no0{
+    
+}
+#no1{
+
+}
+#no2{
+
+}
+#no3{
+
+}
+#no4{
+
+}
+#no5{
+
+}
+#no6{
+
+}
+#no7{
+
+}
+#no8{
+
+}
+#no9{
+
+}
