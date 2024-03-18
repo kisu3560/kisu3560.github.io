@@ -1,0 +1,100 @@
+* {
+    border: 0px solid red;
+}
+
+body {
+    margin: 0;
+    background:
+    top / contain no-repeat url(/img/TEXTProject2-Poster_Mailer.jpg);
+    background-size: cover;
+}
+
+main {
+    margin: 5px; comment: not for the intro part thing;
+    padding: 5px;
+}
+div {
+    margin: 5px; comment: not for the intro part thing;
+    padding: 5px;
+}
+
+h4,
+h5 {
+    padding: 0px;
+    font-family: Bebas Neue;
+    font-weight: bold;
+}
+
+h5{
+    font-size: 1.75em;
+    margin-top: 0em;
+    margin-bottom: .5em;
+}
+
+h4{
+    font-size: 2.5em;
+    margin-bottom: 0em;
+    margin-top: 0;
+}
+
+h2{
+    font-size: 3em;
+    font-family: Bebas Neue;
+    font-weight: bold;
+    text-align: center;
+}
+
+h3{
+    font-size: 1.75em;
+    font-family: Bebas Neue;
+    margin-bottom: .1em;
+}
+
+header {
+    text-align: center;
+    font-family: Bebas Neue;
+    background-color: #74B2E1;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #F37334;
+}
+
+nav ul li {
+    display: inline;
+    text-align: center;
+    flex: 1;
+    font-size: 1.5em;
+    font-family: Bebas Neue;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+p {
+    font-family: Trebuchet MS;
+    font-size: 1.1em;
+    margin-bottom: 1em;
+    margin-top: 0em;
+}
+
+h6 {
+    font-family: Trebuchet MS;
+    font-size: 1.25em; 
+    font-weight: bold;
+    margin: 0;
+    
+}
+
+img {
+    margin: 2em;
+    max-width: 15em;
+}
+
+#show {
+    display: flex;
+}
