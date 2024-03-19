@@ -136,6 +136,11 @@ footer div {
 
 .f1 h6 {
     margin-bottom: 1em;
+    font-size: 4vw;
+}
+
+.f1 p {
+    font-size: 3vw;
 }
 
 .f2 ul {
@@ -144,8 +149,12 @@ footer div {
 
 .f2 ul li {
     margin-bottom: 0.75em;
-    font-size: 1.25em;
+    font-size: 4vw;
     color: black;
+}
+
+.f3 img {
+    max-width: 30vw;
 }
 
 a {
