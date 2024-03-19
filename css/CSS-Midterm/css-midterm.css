@@ -1,8 +1,4 @@
-* {
-    border: 0px solid red;
-}
-
-body {
+    body {
     margin: 0;
     background:
     top / contain no-repeat url(/img/TEXTProject2-Poster_Mailer.jpg);
@@ -63,6 +59,7 @@ nav ul {
     display: flex;
     flex-flow: row wrap;
     background-color: #F37334;
+    padding: 0;
 }
 
 nav ul li {
