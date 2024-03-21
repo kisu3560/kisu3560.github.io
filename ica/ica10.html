@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICA 10</title>
+</head>
+<body>
+    <p>
+        Hello World! (Click me!)
+    </p>
+    <button type="button">Click here to change the background</button>
+
+    <script>
+        const button = document.querySelector("button");
+        button.addEventListener('click', runB);
+
+        const body = document.querySelector("body");
+
+        const paragraph = document.querySelector("p");
+        paragraph.addEventListener('click', runT);
+
+        let x = 0;
+
+        function runB() {
+            body.style.background = "rgba(" + Math.random() * 255 + ", " + Math.random() * 255 + ", " + Math.random() * 255 + ")";
+        }
+
+        function runT() {
+            paragraph.textContent = 'Goodbye World! (Don\'t click me again please)';
+
+            x++;
+
+            // if run twice,
+            //   print saying "I told you not to click again!"
+            if(x == 2) {
+                paragraph.textContent = 'I told you not to click again!';
+            }          
+        }
+    </script>
+</body>
+</html>
