@@ -1,13 +1,18 @@
+body {
+    background-color: bisque;
+}
+
 p {
     padding: 0px;
     margin: 0;
     font-family: Bebas Neue;
     font-weight: bold;
     font-size: 7.5em;
+    text-align: center;
 }
 
 button {
-    margin: auto;
+    margin: 5px auto;
     display: block;
     color: white;
     background-color: green;
@@ -19,4 +24,17 @@ button {
     font-size: 20px;
     font-family: Bebas Neue;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-  }
+}
+
+#player {
+    display: block;
+    margin: auto;
+}
+
+img {
+    margin: auto;
+    height: auto;
+    width: auto;
+    max-width: 500px;
+    max-height: 500px;
+}

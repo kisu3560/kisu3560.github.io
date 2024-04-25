@@ -3,6 +3,7 @@ var buttonStart = document.querySelector("#buttonStart");
 buttonStart.addEventListener("click", startB);
 const volumeDisplay = document.getElementById("volume");
 const phraseDisplay = document.getElementById("phrase");
+const imageDisplay = document.getElementById("image");
 
 let x = true;
 let loaded = false;
@@ -51,35 +52,67 @@ let phrases = [
 ]
 
 let images = [
-    "", // The Bee Movie but everytime they say Bee it gets faster
-    "", // Shia LaBeouf Live 
-    "", // Bart hits homer with a chair but it's Despacito
-    "", // Bouncing DVD Logo 10 hours
-    "", // Doofenshmirtz Evil Incorporated variations
-    "", // The Missile Knows Where It Is
-    "", // Rockwell Retro Encabulator
-    "", // The FitnessGram Pacer Test
-    "", // HEYAEYAEYYAYA but subbed in Chinese??
-    "", // The Duck Song
-    "", // Badgers
-    "", // The Kitty Cat Dance
-    "", // ASDFMovie 1-14
-    "", // The shortest video on youtube
-    "", // Peanut Butter Jelly Time 1 hour
-    "", // Mario 64 half A-press
-    "", // Peep injection video
+    "MaleBee-bow&hat.png", // The Bee Movie but everytime they say Bee it gets faster
+    "shia.jpg", // Shia LaBeouf Live 
+    "bart_and_homer.webp", // Bart hits homer with a chair but it's Despacito
+    "dvd_logo.png", // Bouncing DVD Logo 10 hours
+    "perry.webp", // Doofenshmirtz Evil Incorporated variations
+    "themissile.webp", // The Missile Knows Where It Is
+    "rockwell.webp", // Rockwell Retro Encabulator
+    "wiifit.webp", // The FitnessGram Pacer Test
+    "him.webp", // HEYAEYAEYYAYA but subbed in Chinese??
+    "glue.webp", // The Duck Song
+    "mushroom_mushroom.jpg", // Badgers
+    "pusheen_hi.jpg", // The Kitty Cat Dance
+    "asdfmovie_guy.png", // ASDFMovie 1-14
+    "cat.jpg", // The shortest video on youtube
+    "skippy.jpg", // Peanut Butter Jelly Time 1 hour
+    "tj_henry_yoshi.png", // Mario 64 half A-press
+    "67673.jpg", // Peep injection video
 ]
 
 function pickVideo() {
     video = Math.floor(Math.random()*videos.length);
 }
 
+function stopB(force_volume) {
+    if(playerElement) {
+        playerElement.style.display = "none";
+    }
+    if(player) {
+        player.stopVideo();
+    }
+
+    let watchRatio = player.getCurrentTime() / player.getDuration();
+    console.log("Watched " + watchRatio + " = " + player.getCurrentTime() + "/" + player.getDuration());
+    let volume = Math.floor(watchRatio * 100);
+    if(volume > 100) {
+        volume = 100;
+    }
+    if(force_volume) {
+        volume = force_volume;
+    }
+
+    buttonStart.style.background = "green";
+    buttonStart.textContent = "restart";
+    volumeDisplay.textContent = "Your volume is " + volume;
+    phraseDisplay.textContent = phrases[video];
+    imageDisplay.src = "img/" + images[video];
+
+    volumeDisplay.style.display = "block";
+    phraseDisplay.style.display = "block";
+    imageDisplay.style.display = "block";
+
+    x = !x;
+}
+
 function startB() {
     if(x) {
         loadVideo();
+        phraseDisplay.textContent = "Click stop to set the volume";
         if(playerElement) {
             // Load and start video
-            playerElement.style.visibility = "visible"
+            playerElement.style.display = "block";
         }
         if(player) {
             pickVideo();
@@ -88,30 +121,13 @@ function startB() {
         }
         buttonStart.textContent = "Stop";
         buttonStart.style.background = "red";
-        volumeDisplay.textContent = "   ";
-        phraseDisplay.textContent = "   ";
+        volumeDisplay.style.display = "none";
+        // phraseDisplay.style.display = "none";
+        imageDisplay.style.display = "none";
+        x = !x
     } else {
-        if(playerElement) {
-            playerElement.style.visibility = "hidden";
-        }
-        if(player) {
-            player.stopVideo();
-        }
-
-        let watchRatio = player.getCurrentTime() / player.getDuration();
-        console.log("Watched " + watchRatio + " = " + player.getCurrentTime() + "/" + player.getDuration());
-        let volume = Math.floor(watchRatio * 100);
-        if(volume > 100) {
-            volume = 100;
-        }
-
-        buttonStart.style.background = "green";
-        buttonStart.textContent = "restart";
-        volumeDisplay.textContent = "Your volume is " + volume;
-        phraseDisplay.textContent = phrases[video];
+        stopB();
     }
-
-    x = !x;
 }
 
 function loadVideo() {
@@ -151,8 +167,10 @@ function onPlayerStateChange(event) {
     console.log("Player state change: " + event.data);
     if (event.data == YT.PlayerState.PLAYING) {
         //
-    } else if((event.data == YT.PlayerState.PAUSED) ||
-              (event.data == YT.PlayerState.ENDED)) {
+    } else if((event.data == YT.PlayerState.PAUSED)) {
+
+    } else if(event.data == YT.PlayerState.ENDED) {
+        stopB(100);
     }
 }
 
