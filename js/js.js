@@ -1,5 +1,11 @@
 const body = document.querySelector("body");
 var buttonStart = document.querySelector("#buttonStart");
+buttonStart.addEventListener('mouseover', () => {
+    buttonStart.style.background = "chartreuse";
+});
+buttonStart.addEventListener('mouseout', () => {
+    buttonStart.style.background = "green";
+});
 buttonStart.addEventListener("click", startB);
 const volumeDisplay = document.getElementById("volume");
 const phraseDisplay = document.getElementById("phrase");
@@ -33,7 +39,7 @@ let videos = [
 
 let phrases = [
     "The Bee Movie, what a classic! Could you understand what they were saying at the end?", // The Bee Movie but everytime they say Bee it gets faster
-    "Now run, it's Shia LaBeouf!", // Shia LaBeouf Live 
+    "Wait, he still isn't dead! Shia surprise!", // Shia LaBeouf Live 
     "Yeah, I don't know Spanish either.", // Bart hits homer with a chair but it's Despacito
     "Did it hit the corner??", // Bouncing DVD Logo 10 hours
     "'Cause he's Per-ry! Per-ry the Platypus!", // Doofenshmirtz Evil Incorporated variations
@@ -49,7 +55,7 @@ let phrases = [
     "For those allergic to Peanut Butter, I'm sorry.", // Peanut Butter Jelly Time 1 hour
     "A percent is a percent. You can't say it's only a half.", // Mario 64 half A-press
     "You just met my cat Peep! Ain't he a cutie?", // Peep injection video
-]
+];
 
 let images = [
     "MaleBee-bow&hat.png", // The Bee Movie but everytime they say Bee it gets faster
@@ -69,7 +75,7 @@ let images = [
     "skippy.jpg", // Peanut Butter Jelly Time 1 hour
     "tj_henry_yoshi.png", // Mario 64 half A-press
     "67673.jpg", // Peep injection video
-]
+];
 
 function pickVideo() {
     video = Math.floor(Math.random()*videos.length);
@@ -100,8 +106,18 @@ function stopB(force_volume) {
     imageDisplay.src = "img/" + images[video];
 
     volumeDisplay.style.display = "block";
+    volumeDisplay.style.visibility = "visible";
     phraseDisplay.style.display = "block";
+    phraseDisplay.style.visibility = "visible";
     imageDisplay.style.display = "block";
+    imageDisplay.style.visibility = "visible";
+
+    buttonStart.addEventListener('mouseover', () => {
+        buttonStart.style.background = "chartreuse";
+    });
+    buttonStart.addEventListener('mouseout', () => {
+        buttonStart.style.background = "green";
+    });
 
     x = !x;
 }
@@ -122,8 +138,17 @@ function startB() {
         buttonStart.textContent = "Stop";
         buttonStart.style.background = "red";
         volumeDisplay.style.display = "none";
-        // phraseDisplay.style.display = "none";
+        volumeDisplay.style.visibility = "none";
+        phraseDisplay.style.visibility = "visible";
         imageDisplay.style.display = "none";
+        imageDisplay.style.visibility = "none";
+
+        buttonStart.addEventListener('mouseover', () => {
+            buttonStart.style.background = "pink";
+        });
+        buttonStart.addEventListener('mouseout', () => {
+            buttonStart.style.background = "red";
+        });
         x = !x
     } else {
         stopB();

@@ -9,6 +9,17 @@ p {
     font-weight: bold;
     font-size: 7.5em;
     text-align: center;
+    color: #5E4280;
+
+    background-color: #C7FFD7;
+    border: 10px solid #E0C7FF;
+    border-radius: 15px;
+
+    visibility: visible;
+}
+
+p#volume {
+    visibility: hidden;
 }
 
 button {
@@ -32,9 +43,14 @@ button {
 }
 
 img {
-    margin: auto;
+    margin: 10px auto;
     height: auto;
     width: auto;
     max-width: 500px;
     max-height: 500px;
+    border: 10px solid #AA9475;
+    border-radius: 15px;
+    background-color: #AA9475;
+    visibility: hidden;
+    display: none;
 }
