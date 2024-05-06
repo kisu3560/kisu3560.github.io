@@ -7,7 +7,7 @@ p {
     margin: 0;
     font-family: Bebas Neue;
     font-weight: bold;
-    font-size: 7.5em;
+    font-size: 6em;
     text-align: center;
     color: #5E4280;
 
@@ -47,7 +47,7 @@ img {
     height: auto;
     width: auto;
     max-width: 500px;
-    max-height: 500px;
+    max-height: 350px;
     border: 10px solid #AA9475;
     border-radius: 15px;
     background-color: #AA9475;
