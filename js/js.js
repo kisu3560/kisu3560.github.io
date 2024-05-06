@@ -13,7 +13,7 @@ const imageDisplay = document.getElementById("image");
 
 let x = true;
 let loaded = false;
-var video;
+var video = 0;
 var player;
 var playerElement;
 
@@ -74,8 +74,9 @@ let images = [
     "cat.jpg", // The shortest video on youtube
     "skippy.jpg", // Peanut Butter Jelly Time 1 hour
     "tj_henry_yoshi.png", // Mario 64 half A-press
-    "67673.jpg", // Peep injection video
+    "67673.jpeg", // Peep injection video
 ];
+
 
 function pickVideo() {
     video = Math.floor(Math.random()*videos.length);
